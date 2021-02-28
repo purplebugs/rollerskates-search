@@ -1,0 +1,20 @@
+{
+  "engineName": "rollerskates-search-engine",
+  "endpointBase": "https://0a01d1f469124414933a3130f4167e9e.ent-search.eu-central-1.aws.cloud.es.io",
+  "searchKey": "search-e4i9nvh8ousjw9gibn9k54f2",
+  "resultFields": [
+    "operating_since",
+    "name",
+    "location",
+    "category",
+    "five_star_rating",
+    "id"
+  ],
+  "sortFields": [
+    "five_star_rating"
+  ],
+  "facets": [
+    "category"
+  ],
+  "titleField": "name"
+}
