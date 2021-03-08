@@ -6,6 +6,23 @@ Proof of concept search engine for FantasticElastic.dev learning purposes
 
 - Built with [Search UI](https://github.com/elastic/search-ui) a React library for building search experiences
 
+## Optional: Indexing data
+
+To re-create the rollerskates index in Elasticsearch...
+
+1. Follow the steps in: [rollerskates-index.txt](rollerskates-index.txt)
+
+To re-create the rollerskates index in Elastic App Search
+
+1. Manage Documents > Index Documents > Upload JSON file: [rollerskates.json](rollerskates.json)
+2. Set the schema as follows
+
+- operating_since: date
+- name: text
+- location: geolocation
+- category: text
+- five_star_rating: number
+
 ## Getting started 🐣
 
 Requires [npm](https://www.npmjs.com/)
