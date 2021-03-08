@@ -10,11 +10,11 @@ Proof of concept search engine for FantasticElastic.dev learning purposes
 
 To re-create the rollerskates index in Elasticsearch...
 
-1. Follow the steps in: [rollerskates-index.txt](rollerskates-index.txt)
+1. Follow the steps in: [documents/rollerskates-index.txt](documents/rollerskates-index.txt)
 
 To re-create the rollerskates index in Elastic App Search
 
-1. Manage Documents > Index Documents > Upload JSON file: [rollerskates.json](rollerskates.json)
+1. Manage Documents > Index Documents > Upload JSON file: [documents/rollerskates.json](documents/rollerskates.json)
 2. Set the schema as follows
 
 - operating_since: date
