@@ -1,0 +1,62 @@
+# Run the following steps in Kibana DevTools to create the rollerskates index
+
+# Pre-condition: If index already exists and want to start again, delete existing index
+
+DELETE rollerskates
+
+# 1. Set index mappings
+
+PUT rollerskates
+{
+  "mappings": {
+    "properties": {
+      "category": {
+        "type": "text",
+        "fields": {
+          "keyword": {
+            "type": "keyword",
+            "ignore_above": 256
+          }
+        }
+      },
+      "location": {
+        "type": "geo_point"
+      },
+      "name": {
+        "type": "text",
+        "fields": {
+          "keyword": {
+            "type": "keyword",
+            "ignore_above": 256
+          }
+        }
+      },
+      "operating_since": {
+        "type": "date"
+      },
+      "five_star_rating": {
+        "type": "long"
+      }
+    }
+  }
+}
+
+# 2. Populate the index
+
+PUT rollerskates/_bulk
+{"index":{"_id":1}}
+{"name":"Flashback Attack","category":"store","location":"37.774929, -122.419418","five_star_rating":4,"operating_since":"2001-11-20"}
+{"index":{"_id":2}}
+{"name":"Xanadu","category":"skating rink,roller disco","location":"34.052235, -118.243683","five_star_rating":5,"operating_since":"1980-08-08"}
+{"index":{"_id":3}}
+{"name":"Electric Light Feet","category":"store","location":"40.712776, -74.005974","five_star_rating":4,"operating_since":"1980-08-08"}
+{"index":{"_id":4}}
+{"name":"Roller Rulez, OK!","category":"skate park","location":"51.507351, -0.127758","five_star_rating":3,"operating_since":"2018-09-20"}
+{"index":{"_id":5}}
+{"name":"Koala Rollers","category":"store,roller disco","location":"-33.868820, 151.209290","five_star_rating":5,"operating_since":"2020-01-01"}
+{"index":{"_id":6}}
+{"name":"Brisvegas Rollers","category":"roller disco,skate park","location":"-27.4689682, 153.0234991","five_star_rating":5,"operating_since":"1973-10-03"}
+
+# 3. Verify contents
+
+GET rollerskates/_search
